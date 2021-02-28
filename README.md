@@ -14,7 +14,7 @@ I made an Burger Project Project with using ReactJS. ReactJS is really useful an
 
 ## Setup
 
-- Install Visual Studio 2019
+- Install Visual Studio Code Editor or what editor you like
 - npm install
 - npm start
 - Now You can use the Burger Project
