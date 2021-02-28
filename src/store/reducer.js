@@ -1,12 +1,21 @@
 import * as actionTypes from './actions';
 
 const initialize = {
-    //YOU NEED TO DO SOMETHING HERE
-    // IF IT IS NOT ABOUT JOB EVAULATION 
-    //THEN YOU WILL NOT ABLE TO GET CODE
+    ingredients: {
+        salad: 0,
+        ketchup: 0,
+        cheese: 0,
+        meat: 0
+    },
+    totalPrice: 3
 };
 
-
+const INGREDIENT_PRICES = {
+    salad: 0.3,
+    cheese: 0.6,
+    meat: 1.5,
+    ketchup: 0.5
+};
 
 const reducer = (state = initialize, action) => {
     switch (action.type) {
@@ -14,7 +23,8 @@ const reducer = (state = initialize, action) => {
             return {
                 ...state,
                 ingredients: {
-                    //SOMETHING
+                    ...state.ingredients,
+                    [action.ingredientName]: state.ingredients[action.ingredientName] + 1
                 },
                 totalPrice: state.totalPrice + INGREDIENT_PRICES[action.ingredientName]
             };
@@ -22,7 +32,8 @@ const reducer = (state = initialize, action) => {
             return {
                 ...state,
                 ingredients: {
-                    //SOMETHING
+                    ...state.ingredients,
+                    [action.ingredientName]: state.ingredients[action.ingredientName] - 1
                 },
                 totalPrice: state.totalPrice - INGREDIENT_PRICES[action.ingredientName]
             };
